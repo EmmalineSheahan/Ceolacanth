@@ -1,0 +1,886 @@
+
+       "073" format for physical properties of marine sediments:
+
+                            format.073 file
+
+                           obtained from:
+
+                    U.S. Department of Commerce
+    National Environmental Satellite, Data, and Information Service
+           National Oceanic and Atmospheric Administration
+          National Centers for Environmental Information (NCEI)
+                          & co-located
+                                
+                 World Data Service for Geophysics
+
+       NOTE: The "073" format was created by NOAA's former National
+             Geophysical Data Center (NGDC) in 1976, and is
+             no longer actively updated.
+
+      (delimited grain size data are as described, but not in the
+       fixed-field format, so "column" information is not relevant)
+
+             for technical assistance please contact:
+
+                 National Centers for Environmental Information
+                 NOAA E/GC3  325 Broadway
+                 Boulder, CO  USA  80305
+                 phone: 303-497-6338
+                 fax:   303-497-6513
+                 email: geology.info@noaa.gov
+_______________________________________________________________________
+
+                   "073" EXCHANGE FORMAT DOCUMENTATION
+____________________________________________________________________________
+
+                    Format for Geotechnical/Grain Size Data
+
+Summary of Header Reports
+
+Title             Record Type  Contents
+-----             -----------  -------------------------------------------
+Cruise Header          A       Institution Code, Ship Code, Cruise Identifier,
+                               Internal Unique No., Institution Name, Ship Name,
+                               Scientist, Report Number
+
+Reference Header       B       Funding Code (2-digit internal funding code),
+                               Project Code, Title of Report or Comments,
+                               Units Codes.
+
+Sample Header          C       Sample Identifier, device code, date of 
+                               collection, time of collection, latitude,
+                               longitude, water depth, core length, device
+
+Cruise and Reference headers are coded once per cruise.  Sample headers are
+coded once per station-sample (e.g. every time either a station or a sample
+identifier changes or device type changes).
+
+Analytical information is coded using the following record types:
+
+     1) Interval header
+     2) Optional comments record
+     3) Data records
+
+Each new interval within a core is noted with an "interval header," if a
+subcore or replicate is analyzed, a new "interval header" is also coded.
+Free-form comments applying to an interval, replicate, or subcore may be
+entered following the "interval header" using a "comments" record type.
+
+There are a large number of data record types.  The coder should select
+only those types which apply to the analyses performed, and omit other 
+data card types.
+
+     Type of data provided for in this format include:
+
+          grain size analyses - 02 record types
+          geotechnical analyses - 08 record types
+          geochemical analyses - 05 record types
+
+A complete description of data entry formats for all of these types of 
+information follows.
+
+
+Common Fields
+------ ------
+
+For sorting and retrieval purposes, the following fields are common to, and
+occupy the same columns within, the record types indicated:
+
+Field Name      Record Types  Actual Entry......
+----------      ------------  -----------------------------------------------
+
+inst                all       Contributor leaves blank, added by data center
+ship                all           "         "      "      "    "  "
+cruise              all       Constant for all records for a given cruise
+sample              C-X       Constant for all records for a given sample
+device              C-X          "      "   "     "     "  "   "     "
+subcore#,           D-X       Constant for all records applying to one
+interval#,                    interval, replicate, or subcore.
+replicate#
+
+
+Additional Information
+---------- -----------
+
+The basic unit of analysis for purposes of this format is the "replicate."
+A replicate may, depending on the analytical methods, be equivalent to a core
+interval or grab sample, or may be one of several sample splits.  In either
+case, each replicate analyzed is represented in the data by an Interval Header
+record followed by one or more data records.  If only one split was analyzed
+for each sample, the replicate number will always be zero.  Fields which are
+not applicable (such as subcore and interval number in the case of a grab
+sample) are left blank.  Subcore numbers are used only for small cores or
+spot samples extracted from box cores.  All weight percentage fields contain
+two implied decimal places (no decimal points are coded).  Code "9999" for
+100%, "0000" for trace (less than 0.005%).
+
+All field lengths are in bytes.  A = Alpha or alphanumeric fields (left-
+justified within field), 9 = Numeric fields (right-justified, balanced around
+any implied decimal position), X = blank field.  ^ denoted an implied 
+decimal position (99^99 is a four-digit numeric field with two implied
+decimal places).
+
+
+Cruise Header - coded once per cruise, this is the first record coded for a
+                cruise.
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   Contains an "A" denoting a "Cruise Header" record
+  2          99   Institution code assigned by data center (contributors leave blank)
+  4          99   Ship code assigned by data center (contributors leave blank)
+  6        A(8)   Cruise id - free-form, assigned by contributor     
+ 14         XXX   Blank for sorting purposes
+ 17        9999   Data center unique identifier (contributors leave blank)
+ 21       A(15)   Contributing institution, free-form.
+ 36       A(15)   Ship name, free-form.
+ 51       A(15)   Scientist responsible for analyses, free-form.
+ 66       A(15)   Report or document id, free-form (e.g. Lab item 390).
+
+
+Reference Header - coded once per cruise, 2nd record for a cruise.
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "B" denoting a "Reference Header" record
+  2    15 cols.   Repeat all information from last "A" record exactly.
+ 17        9999   "9999" for sorting purposes
+ 21          99   Funding code, added by data center  (contributors leave blank)
+ 23          99   Project code, added by data center (contributors leave blank)
+ 25       A(44)   Title of Report or Cruise Comments - free-form
+ 69        9(6)   Date entered on disk (not coded) (YYMMDD)
+ 75           A   Units, wet unit wt (g = g/cm3, k = kg/m3)
+ 76           A   Units, sound velocity (m = m/sec)
+ 77           A   Units, cohesion (g = g/cm2, p = psi, k = kPa)
+ 78           A   Units, compressive strength (g = g/cm2, k = kPa)
+ 79           A   Units, vane size (i = inch, c = cm)
+ 80           A   Units, vane turning rate (s = sec, m = min)
+
+
+Sample Header - coded once per sample (grab, dredge, core, etc.), this is the
+                first record coded for each new sample, no matter what type of
+                analyses follow.
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "C" denoting a "Sample Header" record
+  2    12 cols.   Repeat all information from last "A" record exactly.
+ 14        A(7)   Sample identifier, free-form, assigned by contributor
+ 21         999   Device code from list below:
+
+                  100 grab sample (undifferentiated)
+                  101 orange peel grab
+                  102 clamshell grab
+                  103 van veen grab
+                  104 shipek grab
+                  105 peterson grab
+                  106 campbell grab
+                  107 smith-mcintyre grab
+                  108 free fall grab
+                  109 ponar grab
+                  110 scoopfish grab
+                  111 dietz-lafond grab
+                  112 boomerang grab
+
+                  200 dredge sample (undifferentiated)
+                  201 chain dredge
+                  202 pipe dredge
+                  203 box dredge
+
+                  300 box core
+
+                  400 gravity core (undifferentiated)
+                  401 phleger corer (gravity)
+                  402 dart corer (gravity)
+                  403 boomerang corer
+                  404 hydroplastic (PVC) gravity corer
+                  405 kullenberg gravity corer
+                  406 ewing gravity corer
+                  
+                  500 piston core (undifferentiated)
+                  501 kullenberg piston corer
+                  502 ewing piston corer
+                  503 hydroplastic (PVC) piston corer
+         
+                  600 vibrating corer
+
+                  700 drive sampler (undifferentiated)
+                  701 hand corer
+
+                  800 drilled sample
+
+ 24        X(6)   Blank for sorting purposes           
+ 30          99   Year of collection
+ 32          99   Month of collection
+ 34          99   Day of collection
+ 36        9999   Time of collection, GMT in military time (0001 thru 2400)
+ 40          99   Degrees latitude
+ 42       99^99   Minutes latitude to hundredths of a minute
+ 46           A   "N" for north or "S" for south
+ 47         999   Degrees longitude
+ 50       99^99   Minutes longitude to hundredths of a minute
+ 54           A   "E" for east or "W" for west
+ 55        9(5)   Water depth in corrected meters
+ 60        9(6)   Core length in centimeters (only coded for core samplers)
+ 66       A(15)   Device, free-form
+
+_______________________________________________________________________________
+
+               Records specific to Grain Size Analyses
+_______________________________________________________________________________
+
+Summary of Grain Size Records
+
+Title             Record Type  Contents
+----------------  -----------  ------------------------------------------------
+Interval Header      D-02      subcore#, interval#, replicate#, depth to top of
+                               interval, depth to bottom of interval, date of
+                               test, wt of material analyzed, method of analysis
+                               for coarse fraction, fine fraction, coarse/fine
+                               boundary, measurement boundaries at coarse and
+                               fine ends, % coarser than coarse boundary,
+                               % finer than fine boundary.
+
+Comments Record      E-02      Free form comments applying to interval
+
+General Size         F-02      Wentworth and/or USC classification plus 
+                               method of analysis
+
+Statistics           X-02      Mean, median, mode, skewness, kurtosis, std
+                               deviation, and sorting coefficient
+
+2 phi analysis       G-02      Wt% in 2 phi increments from -8 to 12 phi
+
+1 phi analysis       H-02      Wt% in 1 phi increments from -8 to 4 phi
+                     I-02      Wt% in 1 phi increments from 4 to 12 phi
+
+1/2 phi analysis     J-02      Wt% in 1/2 phi increments from -6 to 0 phi
+                     K-02      Wt% in 1/2 phi increments from 0 to 6 phi
+                     L-02      Wt% in 1/2 phi increments from 6 to 12 phi
+
+1/3 phi analysis     M-02      Wt% in 1/3 phi increments from -6 to -2 phi
+                     N-02      Wt% in 1/3 phi increments from -2 to 2 phi
+                     O-02      Wt% in 1/3 phi increments from 2 to 6 phi
+                     P-02      Wt% in 1/3 phi increments from 6 to 10 phi
+                     Q-02      Wt% in 1/3 phi increments from 10 to 12 phi
+
+1/4 phi analysis     R-02      Wt% in 1/4 phi increments from -6 to -3 phi
+                     S-02      Wt% in 1/4 phi increments from -3 to 0 phi
+                     T-02      Wt% in 1/4 phi increments from 0 to 3 phi
+                     U-02      Wt% in 1/4 phi increments from 3 to 6 phi
+                     V-02      Wt% in 1/4 phi increments from 6 to 9 phi
+                     W-02      Wt% in 1/4 phi increments from 9 to 12 phi
+
+
+
+Interval Header Record
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "D" to denote grain size "Interval Header" record
+  2    22 cols.   Repeat all information from last "C" (Sample Header) record
+ 24           9   Subcore # - blank unless actual subcore, begin with 0
+ 25          99   Interval # - blank unless sample analyzed by intervals,
+                               begin with 00
+ 27           9   Replicate # - begin with 0
+ 28          99   Analysis Type - always "02" for grain size
+ 30    999999^9   Depth to top of interval - cm, only for core samples
+ 37    999999^9   Depth to bottom of interval - cm, only for core samples
+ 44        9(6)   Date of test - YYMMDD
+ 50        9999   Time of test - GMT, military time (0001 - 2400)
+ 54      999^99   Replicate Weight, grams
+ 59           A   Method of analysis, coarse fraction (if used on entire
+                                      sample leave cols. 61-64 blank)
+                         1 = sieves
+                         2 = settling tube
+                         3 = rapid sediment analyzer
+
+ 60           A   Method of analysis, fine fraction (if used on entire sample
+                                      leave cols. 61-64 blank)
+
+                         1 = pipette                4 = hydrophotometer
+                         2 = hydrometer             5 = coulter counter
+                         3 = sedimentation balance
+
+ 61       99^99   Coarse/Fine boundary, phi (leave blank if all analysis same)
+
+ 65       99^99   Coarse end boundary, phi (all coarser = lumped together)
+
+ 69       99^99   Fine end boundary, phi (all finer = lumped together)
+
+ 73       99^99   Wt% coarser than coarse boundary
+
+ 77       99^99   Wt% finer than fine boundary
+
+
+Data Record: Comments                 
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "E" to denote interval comments                    
+  2    28 cols.   Repeat from last "D" (Interval Header) record
+ 30           A   Sequence letter "A" to "Z" for sorting comments records
+ 31       A(50)   Comments, free form
+
+
+
+Data Record: General Size Information
+
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "F" to denote general grain size information record
+  2    28 cols.   Repeat from last "D" (Interval Header) record
+
+                  Wentworth classification:
+                  ------------------------
+ 30      99^999   Wt% Gravel (diameter > 2mm)
+ 35      99^999   Wt% Sand (diameter 2mm to 0.0625mm)
+ 40      99^999   Wt% Silt (diameter 0.0625mm to 0.0039mm)
+ 45      99^999   Wt% Clay (diameter < 0.0039mm)
+ 50      99^999   Wt% Mud (silt + clay, if undifferentiated)
+           
+                  Unified Soil Classification System (USC):
+                  ----------------------------------------
+ 55      99^999   Wt% Gravel (retained on No. 4 sieve)
+ 60      99^999   Wt% Sand (passing No. 4 sieve, retained on No. 200 sieve)
+ 65      99^999   Wt% Fines (passing No. 200 sieve)
+
+ 70       A(11)   Method of analysis - free form description
+
+
+
+Data Record: Size Analysis, 2 phi increments -8 to 12 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "G" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% -8 to -6 phi (256mm to 64mm)
+ 34       99^99   Wt% -6 to -4 phi (64mm to 16mm)
+ 38       99^99   Wt% -4 to -2 phi (16mm to 4mm)
+ 42       99^99   Wt% -2 to  0 phi (4mm to 1mm)
+ 46       99^99   Wt%  0 to  2 phi (1mm to 0.25mm)
+ 50       99^99   Wt%  2 to  4 phi (0.25mm to 0.0625mm)
+ 54       99^99   Wt%  4 to  6 phi (0.0625mm to 0.0156mm)
+ 58       99^99   Wt%  6 to  8 phi (0.0156mm to 0.0039mm)
+ 62       99^99   Wt%  8 to 10 phi (0.0039mm to 0.00098mm)
+ 66       99^99   Wt% 10 to 12 phi (0.00098mm to 0.00024mm)
+ 70       X(11)   Blank filler, record contains 80 characters
+
+
+
+Data Record: Size Analysis, 1 phi increments -8 to 4 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "H" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% -8 to -7 phi (256mm to 128mm)
+ 34       99^99   Wt% -7 to -6 phi (128mm to 64mm)
+ 38       99^99   Wt% -6 to -5 phi (64mm to 32mm)
+ 42       99^99   Wt% -5 to -4 phi (32mm to 16mm)
+ 46       99^99   Wt% -4 to -3 phi (16mm to 8mm)
+ 50       99^99   Wt% -3 to -2 phi (8mm to 4mm)
+ 54       99^99   Wt% -2 to -1 phi (4mm to 2mm)
+ 58       99^99   Wt% -1 to  0 phi (2mm to 1mm)
+ 62       99^99   Wt%  0 to  1 phi (1.0mm to 0.5mm)
+ 66       99^99   Wt%  1 to  2 phi (0.5mm to 0.25mm)
+ 70       99^99   Wt%  2 to  3 phi (0.25mm to 0.125mm)
+ 74       99^99   Wt%  3 to  4 phi (0.125mm to 0.0625mm)
+
+
+Data Record: Size Analysis, 1 phi increments 4 to 12 phi 
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "I" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt%  4 to  5 phi (0.0625mm to 0.031mm)
+ 34       99^99   Wt%  5 to  6 phi (0.031mm to 0.0156mm)
+ 38       99^99   Wt%  6 to  7 phi (0.0156mm to 0.0078mm)
+ 42       99^99   Wt%  7 to  8 phi (0.0078mm to 0.0039mm)
+ 46       99^99   Wt%  8 to  9 phi (0.0039mm to 0.0020mm)
+ 50       99^99   Wt%  9 to 10 phi (0.0020mm to 0.00098mm)
+ 54       99^99   Wt% 10 to 11 phi (0.00098mm to 0.00049mm)
+ 58       99^99   Wt% 11 to 12 phi (0.00049mm to 0.00024mm)
+ 62       X(19)   Blank filler, record contains 80 characters
+
+
+Data Record: Size Analysis, 1/2 phi increments -6 to 0 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "J" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt%  -6.0 to -5.5 phi (64mm to 45mm)
+ 34       99^99   Wt%  -5.5 to -5.0 phi (45mm to 32mm)
+ 38       99^99   Wt%  -5.0 to -4.5 phi (32mm to 23mm)
+ 42       99^99   Wt%  -4.5 to -4.0 phi (23mm to 16mm)
+ 46       99^99   Wt%  -4.0 to -3.5 phi (16mm to 11.3mm)
+ 50       99^99   Wt%  -3.5 to -3.0 phi (11.3mm to 8mm)
+ 54       99^99   Wt%  -3.0 to -2.5 phi (8mm to 5.66mm)
+ 58       99^99   Wt%  -2.5 to -2.0 phi (5.66mm to 4mm)
+ 62       99^99   Wt%  -2.0 to -1.5 phi (4mm to 2.83mm)
+ 66       99^99   Wt%  -1.5 to -1.0 phi (2.83mm to 2mm)
+ 70       99^99   Wt%  -1.0 to -0.5 phi (2mm to 1.41mm)
+ 74       99^99   Wt%  -0.5 to  0.0 phi (1.41mm to 1mm)
+
+
+Data Record: Size Analysis, 1/2 phi increments 0 to 6.0 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "K" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% 0.0 to 0.5 phi (1.0mm to 0.71mm)
+ 34       99^99   Wt% 0.5 to 1.0 phi (0.71mm to 0.5mm)
+ 38       99^99   Wt% 1.0 to 1.5 phi (0.5mm to 0.35mm)
+ 42       99^99   Wt% 1.5 to 2.0 phi (0.35mm to 0.25mm)
+ 46       99^99   Wt% 2.0 to 2.5 phi (0.25mm to 0.177mm)
+ 50       99^99   Wt% 2.5 to 3.0 phi (0.177mm to 0.125mm)
+ 54       99^99   Wt% 3.0 to 3.5 phi (0.125mm to 0.088mm)
+ 58       99^99   Wt% 3.5 to 4.0 phi (0.088mm to 0.0625mm)
+ 62       99^99   Wt% 4.0 to 4.5 phi (0.0625mm to 0.044mm)
+ 66       99^99   Wt% 4.5 to 5.0 phi (0.044mm to 0.031mm)
+ 70       99^99   Wt% 5.0 to 5.5 phi (0.031mm to 0.022mm)
+ 74       99^99   Wt% 5.5 to 6.0 phi (0.022mm to 0.0156mm)
+
+
+Data Record: Size Analysis, 1/2 phi increments 6 to 12 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "L" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt%  6.0 to  6.5 phi (0.156mm to 0.0110mm)
+ 34       99^99   Wt%  6.5 to  7.0 phi (0.0110mm to 0.0078mm)
+ 38       99^99   Wt%  7.0 to  7.5 phi (0.0078mm to 0.0055mm)
+ 42       99^99   Wt%  7.5 to  8.0 phi (0.0055mm to 0.0039mm)
+ 46       99^99   Wt%  8.0 to  8.5 phi (0.0039mm to 0.0028mm)
+ 50       99^99   Wt%  8.5 to  9.0 phi (0.0028mm to 0.0020mm)
+ 54       99^99   Wt%  9.0 to  9.5 phi (0.0020mm to 0.00138mm)
+ 58       99^99   Wt%  9.5 to 10.0 phi (0.00138mm to 0.00098mm)
+ 62       99^99   Wt% 10.0 to 10.5 phi (0.00098mm to 0.00069mm)
+ 66       99^99   Wt% 10.5 to 11.0 phi (0.00069mm to 0.00049mm)
+ 70       99^99   Wt% 11.0 to 11.5 phi (0.00049mm to 0.00039mm)
+ 74       99^99   Wt% 11.5 to 12.0 phi (0.00039mm to 0.00024mm)
+
+(Record types M through Q - 1/3 phi intervals have not yet been used, and are
+ not described here.  If 1/3 phi data are received, desriptions will be added) 
+
+Data Record: Size Analysis, 1/4 phi increments -6 to -3 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "R" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% -6.00 to -5.75 phi (64mm to 54mm)
+ 34       99^99   Wt% -5.75 to -5.50 phi (54mm to 45mm)
+ 38       99^99   Wt% -5.50 to -5.25 phi (45mm to 38mm)
+ 42       99^99   Wt% -5.25 to -5.00 phi (38mm to 32mm)
+ 46       99^99   Wt% -5.00 to -4.75 phi (32mm to 26.9mm)
+ 50       99^99   Wt% -4.75 to -4.50 phi (26.9mm to 22.6mm)
+ 54       99^99   Wt% -4.50 to -4.25 phi (22.6mm to 19.0mm)
+ 58       99^99   Wt% -4.25 to -4.00 phi (19.0mm to 16.0mm)
+ 62       99^99   Wt% -4.00 to -3.75 phi (16.0mm to 13.5mm)
+ 66       99^99   Wt% -3.75 to -3.50 phi (13.5mm to 11.3mm)
+ 70       99^99   Wt% -3.50 to -3.25 phi (11.3mm to 9.5mm)
+ 74       99^99   Wt% -3.25 to -3.00 phi (9.5mm to 8.0mm)
+
+
+Data Record: Size Analysis, 1/4 phi increments -3 to 0 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "S" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% -3.00 to -2.75 phi (8.0mm to 6.73mm)
+ 34       99^99   Wt% -2.75 to -2.50 phi (6.73mm to 5.66mm)
+ 38       99^99   Wt% -2.50 to -2.25 phi (5.66mm to 4.76mm)
+ 42       99^99   Wt% -2.25 to -2.00 phi (4.76mm to 4.00mm)
+ 46       99^99   Wt% -2.00 to -1.75 phi (4.00mm to 3.36mm)
+ 50       99^99   Wt% -1.75 to -1.50 phi (3.36mm to 2.83mm)
+ 54       99^99   Wt% -1.50 to -1.25 phi (2.83mm to 2.38mm)
+ 58       99^99   Wt% -1.25 to -1.00 phi (2.38mm to 2.00mm)
+ 62       99^99   Wt% -1.00 to -0.75 phi (2.00mm to 1.68mm)
+ 66       99^99   Wt% -0.75 to -0.50 phi (1.68mm to 1.41mm)
+ 70       99^99   Wt% -0.50 to -0.25 phi (1.41mm to 1.19mm)
+ 74       99^99   Wt% -0.25 to  0.00 phi (1.19mm to 1.00mm)
+
+
+Data Record: Size Analysis, 1/4 phi increments 0 to 3 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "T" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% 0.00 to 0.25 phi (1.00mm to 0.84mm)
+ 34       99^99   Wt% 0.25 to 0.50 phi (0.84mm to 0.71mm)
+ 38       99^99   Wt% 0.50 to 0.75 phi (0.71mm to 0.59mm)
+ 42       99^99   Wt% 0.75 to 1.00 phi (0.59mm to 0.50mm)
+ 46       99^99   Wt% 1.00 to 1.25 phi (0.50mm to 0.42mm)
+ 50       99^99   Wt% 1.25 to 1.50 phi (0.42mm to 0.35mm)
+ 54       99^99   Wt% 1.50 to 1.75 phi (0.35mm to 0.30mm)
+ 58       99^99   Wt% 1.75 to 2.00 phi (0.30mm to 0.25mm)
+ 62       99^99   Wt% 2.00 to 2.25 phi (0.25mm to 0.21mm)
+ 66       99^99   Wt% 2.25 to 2.50 phi (0.21mm to 0.177mm)
+ 70       99^99   Wt% 2.50 to 2.75 phi (0.177mm to 0.149mm)
+ 74       99^99   Wt% 2.75 to 3.00 phi (0.149mm to 0.125mm)
+
+
+Data Record: Size Analysis, 1/4 phi increments 3 to 6 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "U" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% 3.00 to 3.25 phi (0.125mm to 0.105mm)
+ 34       99^99   Wt% 3.25 to 3.50 phi (0.105mm to 0.088mm)
+ 38       99^99   Wt% 3.50 to 3.75 phi (0.088mm to 0.074mm)
+ 42       99^99   Wt% 3.75 to 4.00 phi (0.074mm to 0.0625mm)
+ 46       99^99   Wt% 4.00 to 4.25 phi (0.0625mm to 0.053mm)
+ 50       99^99   Wt% 4.25 to 4.50 phi (0.053mm to 0.044mm)
+ 54       99^99   Wt% 4.50 to 4.75 phi (0.044mm to 0.037mm)
+ 58       99^99   Wt% 4.75 to 5.00 phi (0.037mm to 0.031mm)
+ 62       99^99   Wt% 5.00 to 5.25 phi (0.031mm to 0.026mm)
+ 66       99^99   Wt% 5.25 to 5.50 phi (0.026mm to 0.022mm)
+ 70       99^99   Wt% 5.50 to 5.75 phi (0.022mm to 0.0186mm)
+ 74       99^99   Wt% 5.75 to 6.00 phi (0.0186mm to 0.0156mm)
+
+
+
+Data Record: Size Analysis, 1/4 phi increments 6 to 9 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "V" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt% 6.00 to 6.25 phi (0.0156mm to 0.0131mm)
+ 34       99^99   Wt% 6.25 to 6.50 phi (0.0131mm to 0.0110mm)
+ 38       99^99   Wt% 6.50 to 6.75 phi (0.0110mm to 0.0093mm)
+ 42       99^99   Wt% 6.75 to 7.00 phi (0.0093mm to 0.0078mm)
+ 46       99^99   Wt% 7.00 to 7.25 phi (0.0078mm to 0.0066mm)
+ 50       99^99   Wt% 7.25 to 7.50 phi (0.0066mm to 0.0055mm)
+ 54       99^99   Wt% 7.50 to 7.75 phi (0.0055mm to 0.0046mm)
+ 58       99^99   Wt% 7.75 to 8.00 phi (0.0046mm to 0.0039mm)
+ 62       99^99   Wt% 8.00 to 8.25 phi (0.0039mm to 0.0033mm)
+ 66       99^99   Wt% 8.25 to 8.50 phi (0.0033mm to 0.0028mm)
+ 70       99^99   Wt% 8.50 to 8.75 phi (0.0028mm to 0.0023mm)
+ 74       99^99   Wt% 8.75 to 9.00 phi (0.0025mm to 0.0020mm)
+
+
+Data Record: Size Analysis, 1/4 phi increments 9 to 12 phi
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "W" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       99^99   Wt%  9.00 to  9.25 phi (0.0020mm to 0.00164mm)
+ 34       99^99   Wt%  9.25 to  9.50 phi (0.00164mm to 0.00138mm)
+ 38       99^99   Wt%  9.50 to  9.75 phi (0.00138mm to 0.00116mm)
+ 42       99^99   Wt%  9.75 to 10.00 phi (0.00116mm to 0.00098mm)
+ 46       99^99   Wt% 10.00 to 10.25 phi (0.00098mm to 0.00082mm)
+ 50       99^99   Wt% 10.25 to 10.50 phi (0.00082mm to 0.00069mm)
+ 54       99^99   Wt% 10.50 to 10.75 phi (0.00069mm to 0.00058mm)
+ 58       99^99   Wt% 10.75 to 11.00 phi (0.00058mm to 0.00049mm)
+ 62       99^99   Wt% 11.00 to 11.25 phi (0.00049mm to 0.00041mm)
+ 66       99^99   Wt% 11.25 to 11.50 phi (0.00041mm to 0.00035mm)
+ 70       99^99   Wt% 11.50 to 11.75 phi (0.00035mm to 0.00029mm)
+ 74       99^99   Wt% 11.75 to 12.00 phi (0.00029mm to 0.00024mm)
+
+
+Data Record: Size Statistics
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "X" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30     99^9999   Mean Grain Size (mm)                          
+ 36     99^9999   Mean Grain Size (phi units)                   
+ 42     99^9999   Median Grain Size (phi units)                 
+ 48     99^9999   Modal Grain Size (phi units at midpoint of principal mode) 
+ 54   +-99^9999   Skewness (phi units)                          
+ 61   +-99^9999   Kurtosis (phi units)                          
+ 68     99^9999   Standard deviation (phi units)                
+ 74       99^99   Sorting coefficient (phi units)               
+ 78         XXX   Blank fill, record contains 80 columns
+
+
+
+_______________________________________________________________________________
+
+               Records specific to Geotechnical Analyses
+_______________________________________________________________________________
+
+Summary of Geotechnical Records
+
+Title             Record Type  Contents
+----------------  -----------  ------------------------------------------------
+Interval Header      D-08      subcore#, interval#, replicate#, depth to top of
+                               interval, depth to bottom of interval, date of
+                               test, time of test, Notes affecting test
+
+Comments Record      E-08      Free form comments applying to interval
+
+Mass Physical Props  F-08      Wet unit wt, grain specific gravity, water
+                               content, porosity, void ratio, saturated void
+                               ratio, permeability, saturation, sound veolocity
+
+Atterberg/Shear      G-08      Liquid limit, plastic limit, liquidity index,
+Strength                       plasticity index, sensitivity, cohesion
+                               undisturbed, cohesion remolded, shear strength
+                               method, modulus of elasticity, activity, angle
+                               of internal friction
+
+Consolidation/       H-08      Compression index, coefficient of consolidation,
+Compressive                    preconsolidation stress, effective overburden
+Strength                       stress, natural compressive strength, remolded
+                               compressive strength
+
+Consolidation/       I-08      Moisture content of sample, void ratios,
+Documentation                  saturation, and dry density measurements
+                               before and after tests, plus sample diameter
+                               and type of test
+
+Pore Pressure/       J-08      Major and minor principal stress, effective
+Compression                    major and minor principal stress, time to
+                               failure, type of test, pore pressure before
+                               and after test, excess pore pressure, 
+                               saturation method
+
+Vane Shear data      K-08      Date of test, time of test, vane size, Pmax,
+                               residual, units, comments
+
+
+
+Interval Header Record
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "D" to denote geotechnical "Interval Header" record
+  2    22 cols.   Repeat all information from last "C" (Sample Header) record
+ 24           9   Subcore # - blank unless actual subcore, begin with 0
+ 25          99   Interval # - blank unless sample analyzed by intervals,
+                               begin with 00
+ 27           9   Replicate # - begin with 0
+ 28          99   Analysis Type - always "08" for geotechnical
+ 30    999999^9   Depth to top of interval - cm, only for core samples
+ 37    999999^9   Depth to bottom of interval - cm, only for core samples
+ 44        9(6)   Date of test - YYMMDD
+ 50        9999   Time of test - GMT, military time (0001 - 2400)
+ 54       A(27)   Notes about testing - free form                       
+
+
+Data Record: Comments                 
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "E" to denote interval comments                    
+  2    28 cols.   Repeat from last "D" (Interval Header) record
+ 30           A   Sequence letter "A" to "Z" for sorting comments records
+ 31       A(50)   Comments, free form
+
+
+Data Record: Mass Physical Properties
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "F" 
+  2    28 cols.   Repeat from last "D" (Interval Header) record
+ 30     99^9999   Wet unit wt (units noted on record type "B")
+ 36     99^9999   Grain specific gravity
+ 42     999^999   Water content (% dry wt ratio)
+ 48      99^999   Porosity
+ 53       9^999   Void ratio
+ 57       9^999   Saturated void ratio
+ 61     999+-99   Permeability, 3 digits, sign, exponent
+ 67    999^9999   Saturation %
+ 74      999999   Sound velocity (units on record type "B")
+
+
+Data Record: Atterberg Limits/Shear Strength             
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "G" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       999^9   Liquid limit
+ 34       999^9   Plastic limit
+ 38       999^9   Liquidity index
+ 42       999^9   Plasticity index
+ 46       99^99   Sensitivity
+ 50    9999^999   Cohesion (undisturbed shear strength, units on record B)
+ 57    9999^999   Cohesion (remolded shear strength, units on record B)
+ 64          99   Method used in shear strength test
+                    01 __________
+                    02 __________
+                    03 __________
+                    04 __________
+                    05 __________
+ 66      999999   Modulus of Elasticity
+ 72      999999   Activity
+ 78         999   Angle of internal friction
+
+
+
+Data Record: Consolidation/Compressive Strength
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "H" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30       9^999   Compression index
+ 34     999+-99   Coefficient of consolidation, 3 significant digits, sign,
+                    exponent
+ 40    999999^9   Preconsolidation stress (units on record B)
+ 47    999999^9   Effective overburden stress (units on record B)
+ 54    9999^999   Natural compressive strength (units on record B)
+ 61    9999^999   Remold compressive strength (units on record B)
+
+
+Data Record: Consolidation/Compression 
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "I" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30     999^999   Moisture content before test
+ 36     999^999   Moisture content after test
+ 42       999^9   Void ratio before test
+ 46       999^9   Void ratio after test 
+ 50     999^999   Saturation before test
+ 56     999^999   Saturation after test 
+ 62         999   Dry density before test
+ 65         999   Dry density after test
+ 68     999^999   Sample diameter (cm)  
+ 74         999   Bulk wet density
+ 77        AAAA   Type of test - abbreviated, free form
+
+
+Data Record: Pore Pressure
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "J" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30     9999^99   Major principal stress
+ 36     9999^99   Minor principal stress
+ 42     9999^99   Effective major principal stress
+ 48     9999^99   Effective minor principal stress
+ 54          99   Time to failure - minutes
+ 56           A   Test type:  A __________
+                              B __________
+                              C __________
+                              D __________
+ 57     9999^99   Pore Pressure before test
+ 63     9999^99   Pore Pressure after test
+ 69     9999^99   Excess Pore Pressure
+ 75      AAAAAA   Saturation method - abbreviated free form
+
+
+
+Data Record: Vane Shear
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "K" 
+  2    28 cols.   Repeat all information from last "D" (Interval Header) record
+ 30      999999   Date of Vane Shear test (YYMMDD)
+ 36        9999   Time of test, GMT, military (0001 - 2400)
+ 40        99^9   Vane size (units on record B)
+ 43   99999^999   Pmax (units on record B)
+ 51   99999^999   Residual (units on record B)
+ 59           9   Number of remold cycles
+ 60          99   Rate of turning - revolutions per (units on record B)
+ 62       A(19)   Test comments - free form
+
+
+
+_______________________________________________________________________________
+
+               Records specific to Geochemical Analyses
+_______________________________________________________________________________
+
+Summary of Geochemical Records
+
+Title             Record Type  Contents
+----------------  -----------  ------------------------------------------------
+Interval Header      D-05      subcore#, interval#, replicate#, depth to top of
+                               interval, depth to bottom of interval, date of
+                               test, time of test, Notes affecting test
+
+Comments Record      E-05      Free form comments applying to interval
+
+Geochemical Data     F-05      Total calcium carbonate %, total carbon %,
+                               organic carbon %, nitrogen %, salinity %
+
+
+
+
+
+Interval Header Record
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "D" to denote geochemical "Interval Header" record
+  2    22 cols.   Repeat all information from last "C" (Sample Header) record
+ 24           9   Subcore # - blank unless actual subcore, begin with 0
+ 25          99   Interval # - blank unless sample analyzed by intervals,
+                               begin with 00
+ 27           9   Replicate # - begin with 0
+ 28          99   Analysis Type - always "05" for geochemical
+ 30    999999^9   Depth to top of interval - cm, only for core samples
+ 37    999999^9   Depth to bottom of interval - cm, only for core samples
+ 44        9(6)   Date of test - YYMMDD
+ 50        9999   Time of test - GMT, military time (0001 - 2400)
+ 54       A(27)   Notes about testing - free form                       
+
+
+Data Record: Comments                 
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "E" to denote interval comments                    
+  2    28 cols.   Repeat from last "D" (Interval Header) record
+ 30           A   Sequence letter "A" to "Z" for sorting comments records
+ 31       A(50)   Comments, free form
+
+
+Data Record: Geochemistry
+                             
+
+Start  Length     Field Description
+-----  --------   ---------------------------------------------------------- 
+  1           A   "F" 
+  2    28 cols.   Repeat from last "D" (Interval Header) record
+ 30      99^999   Total calcium carbonate %
+ 40      99^999   Total carbon %
+ 45      99^999   Organic carbon %
+ 50      99^999   Nitrogen %
+ 55      99^999   Salinity %

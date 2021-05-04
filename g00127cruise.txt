@@ -1,0 +1,300 @@
+mggid	ship_code	ship	cruise	mgg_unique	contributor	original_ship	scientist	report_id	funding	project	title	date_entered	units_wet_unit_wt	units_sound_velocity	units_cohesion	units_compressive_strength	units_vane_size	units_vane_turn_rate	cruise_comments
+06245001	0624	Townsend Cromwell	JPO 212	5001	USGS, Menlo Park	CROMWELL	Carlson													
+20995002	2099	Multiple	ANC68	5002	U. Washington	ANC	Roberts													
+09005006	0900	Unknown Platform	214	5006	NAVOCEANO		Dick													
+09005034	0900	Unknown Platform	L.I. 430	5034	NAVOCEANO		Kelly	Laboratory Item 430												
+09995026	0904	Hunt	939012	5026	NAVOCEANO	R/V F V HUNT	Hulsemann	Laboratory Item 1015			A Summary of Sediment Size and Composition	19000000								
+20995002	2001	Thomas G. Thompson	TT019	5002	U. Washington	THOMPSON	Roberts													
+20995002	2001	Thomas G. Thompson	TT018	5002	U. Washington	THOMPSON	Roberts													
+09005037	0900	Unknown Platform	L.I. 439	5037	NAVOCEANO		Loomis	Laboratory Item 439												
+09265003	0926	Lynch	COGAD	5003	NAVOCEANO	USS LYNCH	Achstetter													
+09995040	0937	Northwind	31501	5001	NAVOCEANO	NORTHWIND														
+20995002	2024	Burton Island	BI064	5002	U. Washington	BURTON ISL.	Roberts													
+09005018	0900	Unknown Platform	L.I. 255	5018	NAVOCEANO		Glover Hill	Laboratory Item 255												
+20995002	2026	Staten Island	SI689	5002	U. Washington	STATON ISL.	Roberts													
+03995007	0399	Multiple	LEI-M	5007	NOAA/NMFS		Garlo													
+03995007	0399	Multiple	LEI-L	5007	NOAA/NMFS		Hondo													
+09995010	0961	Edisto	00514	5005	NHO	EDISTO					Data part of MGGD09995010									
+09095002	0909	Gibbs	NATLC	5002	NAVOCEANO	USNS GIBBS	Kelly	Laboratory Item 389			A Summary of Sediment Size and Composition	19940922								
+09645001	0964	Dampier	DAMPIER	5001	NAVOCEANO	H.M.S. DAMPIER	Achstetter	Laboratory Item 311			A Summary of Sound Velocities, Engineering	19000000								
+23085001	2308	Lady Gloria	09/01/82	5001	TAMU	LADY GLORIA	Slowey													
+09995033	0903	Silas Bent	939005	5033	NAVOCEANO	USNS BENT	Bowman	Laboratory Item 1012			A Summary of Sediment Size, X-Radiography,	19000000								
+41055001	4105	Glacier	OCSRU529	5001	U. Alaska IMS	GLACIER	Naidu													
+06995003	0611	Sea Sounder	S777WG	5003	USGS, Menlo Park	SEA SOUNDER	Bouma Hampton													
+09785008	0978	Wilkes	330381	5008	NAVOCEANO	USNS WILKES	Ingram	Laboratory Item 532												
+09005044	0900	Unknown Platform	L.I. 449	5044	NAVOCEANO		Loomis	Laboratory Item 449												
+03995007	0314	Peirce	BLM04B	5007	VIMS	G W PIERCE	Serafy Hartzban													
+03995007	0399	Multiple	RBCII3	5007	NOAA/NMFS															
+03995007	0399	Multiple	LEI-H	5007	NOAA/NMFS		Hondo													
+03995007	0399	Multiple	LEI-E	5007	NOAA/NMFS		Hondo													
+09005038	0900	Unknown Platform	L.I. 441	5038	NAVOCEANO		Loomis	Laboratory Item 441												
+03995007	0399	Multiple	RBCI04	5007	Rutgers		Dean													
+03995010	0677	Gyre	MAFLA014	5010	U. South Florida	GYRE	Doyle													
+09575001	0957	Nasami	TOKYOBAY	5001	NAVOCEANO	JMSDF NASAMI	Glover	Laboratory Item 316			A Summary of Engineering Properties,Sediment	19000000								
+09035008	0903	Silas Bent	BENT	5008	NCEL	USNS BENT														
+03565001	0356	Longhorn	STOCS026	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS020	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS046	5001	U. Texas	LONGHORN	Behrens													
+03995007	5702	James M. Gilliss	BLM03B	5007	VIMS	J M GILLISS	Serafy													
+03995007	0399	Multiple	FIM07	5007	EPA		Swartz													
+03565001	0356	Longhorn	STOCS059	5001	U. Texas	LONGHORN	Behrens													
+03995007	0399	Multiple	FIM06	5007	EPA		Swartz													
+09785008	0978	Wilkes	343920	5008	NAVOCEANO	USNS WILKES	Ingram	Laboratory Item 532												
+03565001	0356	Longhorn	STOCS037	5001	U. Texas	LONGHORN	Behrens													
+09005049	0900	Unknown Platform	L.I. 469	5049	NAVOCEANO		Bowman	Laboratory Item 469												
+01995001	0101	Robert D. Conrad	RC12	5001	LDEO	Robert Conrad	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific	19950131	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+23055001	2305	T-Kip IV	II-A	5001	TAMU	T-KIP IV	Cooper													
+20995002	2025	Northwind	NW063	5002	U. Washington	NORTHWIND	Roberts													
+03995010	0300	Unknown Platform	MAFLADM4	5010	U. South Florida	INDIANSEAL	Doyle													
+60045001	6004	Venture	I-3	5001	Woodward-Clyde	R/V VENTURE	MacDonald													
+09995007	0955	Serrano	SERRANO	5004	NAVOCEANO	SERRANO					Data part of MGGD09995007									
+09265004	0926	Lynch	COGARD	5004	NAVOCEANO	USS LYNCH	Loomis													
+20995002	2001	Thomas G. Thompson	TT020	5002	U. Washington	THOMPSON	Roberts													
+09055007	0905	Kane	424	5007	NAVOCEANO	USNS KANE	Kelly													
+09055005	0905	Kane	343601	5005	NAVOCEANO	USNS KANE	Ingram	Laboratory Item 492			A Summary of Sediment Size, X-Radiography,	19000000								
+09265001	0926	Lynch	AGOR	5001	NAVOCEANO	USS LYNCH	Bochman													
+09005024	0900	Unknown Platform	L.I. 374	5024	NAVOCEANO		Achstetter	Laboratory Item 374												
+20995002	2001	Thomas G. Thompson	TT043	5002	U. Washington	THOMPSON	Roberts													
+60045001	6004	Venture	II-3	5001	Woodward-Clyde	R/V VENTURE	MacDonald													
+60045001	6004	Venture	I-4	5001	Woodward-Clyde	R/V VENTURE	MacDonald													
+09005058	0900	Unknown Platform	NCEL	5058	NCEL		Valent													
+23085001	2308	Lady Gloria	05/20/82	5001	TAMU	LADY GLORIA	Slowey													
+09005025	0900	Unknown Platform	L.I. 390	5025	NAVOCEANO		Loomis	Laboratory Item 390												
+20995002	2029	John N. Cobb	COBB	5002	U. Washington	COBB	Roberts													
+09005032	0900	Unknown Platform	L.I. 379	5032	NAVOCEANO		Whitney	Laboratory Item 379												
+09035003	0903	Silas Bent	L.I.1019	5003	NAVOCEANO	SILAS BENT	Bowman	Laboratory Item 1019												
+09005016	0900	Unknown Platform	L.I. 250	5016	NAVOCEANO		Coleman	Laboratory Item 250												
+09065008	0906	San Pablo	D-6	5008	NAVOCEANO	SAN PABLO	Stiles													
+09995047	0953	Vital	VITAL	5001	NAVOCEANO	USS VITAL	Underwood				Data in set MGGD09995047									
+09005053	0900	Unknown Platform	L.I. 462	5053	NAVOCEANO		Oser	Laboratory Item 462												
+09005003	0900	Unknown Platform	L.I. 294	5003	NAVOCEANO		Achstetter	Laboratory Item 294												
+41025001	4102	Miller Freeman	OCS818	5001	U. Alaska IMS	M. FREEMAN	Hoskin													
+09465001	0946	Lord Kelvin	KELVIN	5001	NAVOCEANO	LORD KELVIN													Silt-Clay Boundary at 0.00195mm	
+41015001	4101	Discoverer	OCS808	5001	U. Alaska IMS	DISCOVERER	Hoskin													
+09995031	0959	Davis	DAVIS	5031	NAVOCEANO	USNS DAVIS	Loomis	Laboratory Item 425			A Summary of Sediment Size, Composition, Chemical	19940915								
+20995002	2031	Virginia City	VC067	5002	U. Washington	V. CITY	Roberts													
+09005060	0900	Unknown Platform	H-34	5060	NAVOCEANO		Stewart													
+09005041	0900	Unknown Platform	L.I. 452	5041	NAVOCEANO		Loomis	Laboratory Item 452												
+03995010	5703	Columbus Iselin	MAFLA039	5010	U. South Florida	ISELIN	Doyle													
+03565001	0356	Longhorn	STOCS039	5001	U. Texas	LONGHORN	Behrens													
+03995007	5705	H. J. W. Fay	BLM08B	5007	VIMS	H.J.W.FAY	Hartzband													
+03995007	0399	Multiple	FIM14	5007	EPA		Swartz													
+03565001	0356	Longhorn	STOCS071	5001	U. Texas	LONGHORN	Behrens													
+03995010	0300	Unknown Platform	MAFLA011	5010	U. South Florida	BELLOWS	Doyle													
+09265006	0926	Lynch	SEAANCH	5006	NAVOCEANO	USNS LYNCH	Achstetter													
+09005048	0900	Unknown Platform	L.I. 466	5048	NAVOCEANO		Bowman	Laboratory Item 466												
+09005030	0900	Unknown Platform	L.I. 249	5030	NAVOCEANO		Hill	Laboratory Item 249												
+03995007	0399	Multiple	FIM03	5007	EPA		Swartz													
+09035005	0903	Silas Bent	L.I. P3	5005	NAVOCEANO	SILAS BENT	Coleman	Laboratory Item P3												
+03565001	0356	Longhorn	STOCS034	5001	U. Texas	LONGHORN	Behrens													
+09005056	0900	Unknown Platform	L.I. 472	5056	NAVOCEANO		Bowman	Laboratory Item 472												
+03565001	0356	Longhorn	STOCS018	5001	U. Texas	LONGHORN	Behrens													
+20995002	2025	Northwind	NW362	5002	U. Washington	NORTHWIND	Roberts													
+41995001	4199	Multiple	RU529OCS	5001	U. Alaska IMS		Naidu													
+09265005	0926	Lynch	ASW	5005	NAVOCEANO	USS LYNCH	Achstetter	Laboratory Item 309			Summary of Sound Velocity, Engineering Properties,	19941229								
+09065006	0906	San Pablo	938026	5006	NAVOCEANO	USS SAN PABLO	Knoop	Laboratory Item 332			A Summary of Sound Velocities, Engineering	19941121								
+09005012	0900	Unknown Platform	STCR65	5012	NAVOCEANO		Huddell													
+03995010	0300	Unknown Platform	MAFLADM2	5010	U. South Florida	JAVA SEAL	Doyle													
+09245003	0924	Tanner	NLONSU	5003	NAVOCEANO	TANNER	Bochman													
+03995007	0399	Multiple	QUART3	5007	NOAA/NMFS															
+03995007	0399	Multiple	OCSS	5007	NOAA/NMFS															
+23085001	2308	Lady Gloria	07/07/82	5001	TAMU	LADY GLORIA	Slowey													
+23085001	2308	Lady Gloria	10/02/81	5001	TAMU	LADY GLORIA	Slowey													
+09005040	0900	Unknown Platform	L.I. 447	5040	NAVOCEANO		Loomis	Laboratory Item 447												
+09375002	0937	Northwind	ARCTIC	5002	NAVOCEANO	USS NORTHWIND	Bochman	Laboratory Item 276			A Summary of Engineering Properties,	19941228								
+09005017	0900	Unknown Platform	L.I. 262	5017	NAVOCEANO		Glover	Laboratory Item 262												
+03995007	0399	Multiple	FIM09	5007	EPA		Swartz													
+09995040	0961	Edisto	ABG-2	5004	NAVOCEANO	EDISTO	Swanson				Data part of MGGD09995040									
+23085001	2308	Lady Gloria	01/06/82	5001	TAMU	LADY GLORIA	Slowey													
+09995043	0936	Staten Island	ND00655	5001	NAVOCEANO	STATEN ISLAND					Data are in set MGGD09995043									
+09005069	0900	Unknown Platform	L.I. 166	5069	NAVOCEANO			Laboratory Item 166												
+09005063	0900	Unknown Platform	L.I. 448	5063	NAVOCEANO		Loomis	Laboratory Item 448												
+20995002	2024	Burton Island	BI060	5002	U. Washington	BURTON ISL.	Roberts													
+20995002	2032	Tomcod	AWF68	5002	U. Washington	TOMCOD	Roberts													
+09995006	0935	Westwind	00616	5003	NAVOCEANO	WESTWIND					Data are part of MGGD09995006									
+03565001	0356	Longhorn	STOCS068	5001	U. Texas	LONGHORN	Behrens													
+03045003	0304	Oceanographer	OPR-476	5003	NOAA/USCGS	OCEANOGRAPHER	Larsen	NOAA OPR-476			Six cores from the Mediterranean and Black Seas	19940000	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+03995007	0399	Multiple	RBCII2	5007	NOAA/NMFS															
+09035007	0903	Silas Bent	939012-3	5007	NAVOCEANO	USNS SILAS BENT	Vestal	Laboratory Item 1016			A Summary of X-Radiography, Sound Velocity	19000000								
+03995007	0399	Multiple	FIM13	5007	EPA		Swartz													
+09785014	0978	Wilkes	330283	5014	NAVOCEANO	USNS WILKES	Ingram	Geology Lab Report 580-6			Results of Laboratory Analyses Performed on	19940811								
+03995007	0399	Multiple	FIM08	5007	EPA		Swartz													
+09135002	0913	Bowditch	T-AGS	5002	NAVOCEANO	BOWDITCH	Hill													
+09035007	0903	Silas Bent	939012	5007	NAVOCEANO	USNS SILAS BENT	Vestal	Laboratory Item 1016			A Summary of X-Radiography, Sound Velocity	19000000								
+01995001	0103	Vema	V20	5001	LDEO	Vema	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific.....	19950104	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+01995001	0101	Robert D. Conrad	RC11	5001	LDEO	Robert Conrad	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific	19950126	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+09785008	0978	Wilkes	343728	5008	NAVOCEANO	USNS WILKES	Ingram	Laboratory Item 532			Results of Laboratory Analyses Performed on	19941017								
+23045002	2304	Sea Transporter	II-C	5002	TAMU	SEA TRANSPO	Cooper													
+23045003	2304	Sea Transporter	III	5003	TAMU	SEA TRANSPO	Cooper													
+06995003	0611	Sea Sounder	S276WG	5003	USGS, Menlo Park	SEA SOUNDER	Bouma Hampton													
+20995002	2001	Thomas G. Thompson	TT042	5002	U. Washington	THOMPSON	Roberts													
+09265008	0926	Lynch	ANCHOR	5008	NAVOCEANO	USNS LYNCH	Ross													
+09785012	0978	Wilkes	330383	5012	NAVOCEANO	USNS WILKES	Ingram	Laboratory Item 580-7			Results of Laboratory Analysis Performed on	19940927								
+09685001	0968	Luiseno	H.016547	5001	NHO	USSLUISENO	Dail													
+65005001	6500	Unknown Platform	ALASKAG	5001	U South Carolina		Hayes													
+09185004	0918	Rehoboth	SAK. F-4	5004	NAVOCEANO	USS REHOBOTH	Achstetter	Laboratory Item 292			Environmental Data:  A Summary of Engineering Properties	19940920								
+09005022	0900	Unknown Platform	L.I. 231	5022	NAVOCEANO		Glover	Laboratory Item 231												
+09005026	0900	Unknown Platform	L.I. 370	5026	NAVOCEANO		Coleman	Laboratory Item 370												
+23085001	2308	Lady Gloria	05/10/82	5001	TAMU	LADY GLORIA	Slowey													
+23085001	2308	Lady Gloria	03/01/82	5001	TAMU	LADY GLORIA	Slowey													
+09035001	0903	Silas Bent	L.I.1007	5001	NAVOCEANO	BENT	Johnson	Laboratory Item 1007												
+09005031	0900	Unknown Platform	L.I.1009	5031	NAVOCEANO		Achstetter	Laboratory Item1009												
+09575001	0957	Nasami	ISE BAY	5001	NAVOCEANO	JMSDF NASAMI	Glover	Laboratory Item 316			A Summary of Engineering Properties,Sediment	19940000								
+09005055	0900	Unknown Platform	L.I. 463	5055	NAVOCEANO		Bowman	Laboratory Item 463												
+23085001	2308	Lady Gloria	02/03/82	5001	TAMU	LADY GLORIA	Slowey													
+09005064	0900	Unknown Platform	L.I. 484	5064	NAVOCEANO		Stiles	Laboratory Item 484												
+09005002	0900	Unknown Platform	L.I. 244	5002	NAVOCEANO		Glover Hill	Laboratory Item 244												
+09005010	0900	Unknown Platform	L.I. 163	5010	NAVOCEANO		Newsom	Laboratory Item 163												
+20995002	2025	Northwind	NW162	5002	U. Washington	NORTHWIND	Roberts													
+09565001	0956	Towhee	AUTEC-EX	5001	NAVOCEANO	USS TOWHEE	Achstetter	Laboratory Item 285				19940000								
+41005002	4100	Unknown Platform	OCSSEDAN	5002	U. Alaska IMS	1977FIELD	Hoskin													
+20995002	2025	Northwind	NW261	5002	U. Washington	NORTHWIND	Roberts													
+09005043	0900	Unknown Platform	L.I. 450	5043	NAVOCEANO		Loomis	Laboratory Item 450												
+09005042	0900	Unknown Platform	L.I. 451	5042	NAVOCEANO		Loomis	Laboratory Item 451												
+23085001	2308	Lady Gloria	12/02/81	5001	TAMU	LADY GLORIA	Slowey													
+23085001	2308	Lady Gloria	11/11/81	5001	TAMU	LADY GLORIA	Slowey													
+09175002	0917	Aqualab	AQ-1	5002	NAVOCEANO	AQUALAB	Underwood												Silt-Clay Boundary at 0.00195mm	
+03995010	5703	Columbus Iselin	MAFLA021	5010	U. South Florida	ISELIN	Doyle													
+03995007	0399	Multiple	QUART1	5007	NOAA/NMFS															
+06255005	0625	Discoverer	D481NS	5005	USGS, Menlo Park	DISCOVERER	Hampton	Open File Report 83-404			Geotechnical Framework Study of the North Bering Sea	19950118								
+03995007	0334	George B. Kelez	HSV	5007	VIMS	KELEZ	Goodrich													
+03995010	5703	Columbus Iselin	MAFLA010	5010	U. South Florida	ISELIN	Doyle													
+03565001	0356	Longhorn	STOCS082	5001	U. Texas	LONGHORN	Behrens													
+09035006	0903	Silas Bent	L.I. 487	5006	NAVOCEANO	SILAS BENT	Kelly	Laboratory Item 487												
+03565001	0356	Longhorn	STOCS040	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS079	5001	U. Texas	LONGHORN	Behrens													
+03995007	0399	Multiple	FIM12	5007	EPA		Swartz													
+09005054	0900	Unknown Platform	L.I.465	5054	NAVOCEANO		Oser	Laboratory Item 465												
+09995031	0926	Lynch	LYNCH	5031	NAVOCEANO	USNS LYNCH	Loomis	Laboratory Item 425			A Summary of Sediment Size, Composition, Chemical	19940915								
+09235003	0923	James M. Gilliss	L.I.396	5003	NAVOCEANO	GILLISS	Kravitz	Laboratory Item 396												
+23085001	2308	Lady Gloria	08/03/82	5001	TAMU	LADY GLORIA	Slowey													
+09005039	0900	Unknown Platform	L.I. 446	5039	NAVOCEANO		Loomis	Laboratory Item 446												
+03995007	0399	Multiple	LEI-I	5007	NOAA/NMFS		Garlo													
+03995007	0399	Multiple	FIM10	5007	EPA		Swartz													
+03995007	0399	Multiple	QUART4	5007	NOAA/NMFS															
+09005068	0900	Unknown Platform	L.I. 507	5068	NAVOCEANO		Reynolds	Laboratory Item 507												
+09125003	0912	Dutton	TAGS22	5003	NAVOCEANO	DUTTON	Achstetter													
+20995002	2005	Brown Bear	BB236	5002	U. Washington	BROWN BEAR	Roberts													
+09005059	0900	Unknown Platform	L.I. 142	5059	NAVOCEANO		Hill	Laboratory Item 142												
+06995003	0611	Sea Sounder	S879WG	5003	USGS, Menlo Park	SEA SOUNDER	Bouma Hampton													
+09785017	0978	Wilkes	330383	5017	NAVOCEANO	USNS WILKES	Ingram	Laboratory Item 583-2			Results of Laboratory Analyses Performed on	19940926								
+03095002	0309	Mt. Mitchell	BC7401	5002	NOAA/NMFS	MT.MITCHELL	Knebel													
+03995007	5705	H. J. W. Fay	BLM07B	5007	VIMS	H.J.W.FAY	Serafy													
+03995007	0399	Multiple	QUART5	5007	NOAA/NMFS															
+03565001	0356	Longhorn	STOCS080	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS028	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS042	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS069	5001	U. Texas	LONGHORN	Behrens													
+03565001	0356	Longhorn	STOCS060	5001	U. Texas	LONGHORN	Behrens													
+03995007	0399	Multiple	FIM02	5007	EPA		Swartz													
+03995007	0399	Multiple	FIM01	5007	EPA		Swartz													
+09035004	0903	Silas Bent	L.I. 438	5004	NAVOCEANO	SILAS BENT	Loomis	Laboratory Item 438												
+03995007	0399	Multiple	LEI-C	5007	NOAA/NMFS		Garlo													
+09995001	0938	Eastwind	00568	5002	NHO	EASTWIND	Rohrhirsch				Data are part of MGGD09995001									
+09785013	0978	Wilkes	343916	5013	NAVOCEANO	USNS WILKES	Kelly	Laboratory Item 553			Results of Laboratory Analyses Performed on 3 Cores	19940927								
+03565001	0356	Longhorn	STOCS049	5001	U. Texas	LONGHORN	Behrens													
+03995007	0399	Multiple	LEI-D	5007	NOAA/NMFS		Garlo													
+20995002	2011	Surveyor	SU068	5002	U. Washington	SURVEYOR	Roberts													
+01995001	0103	Vema	V24	5001	LDEO	Vema	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific.....	19950120	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+20995002	2025	Northwind	NW262	5002	U. Washington	NORTHWIND	Roberts													
+20995002	2099	Multiple	ANC69	5002	U. Washington	ANC	Roberts													
+09775002	0977	Hayes	72016	5002	NAVOCEANO	USNS HAYS	Bowman	Laboratory Item 435			A Summary of Sediment Size, Composition and	19940000								
+41995002	4199	Multiple	unknown	5002	U. Alaska IMS		Naidu													
+09005011	0900	Unknown Platform	121/02	5011	NAVOCEANO		Bockman													
+60045001	6004	Venture	II-2	5001	Woodward-Clyde	R/V VENTURE	MacDonald													
+09055002	0905	Kane	344602	5002	NAVOCEANO	USNS KANE	Ross	Laboratory Item 496			A Summary of Sediment Size, Mass Physical	19000000								
+09005071	0900	Unknown Platform	L.I. 517	5071	NAVOCEANO		Reynolds	Laboratory Item 517												
+09585001	0958	Vidal	NAVADO	5001	NAVOCEANO	H.M.S. VIDAL	Coleman	Laboratory Item 206			A Summary of Engineering Properties and Sediment	19940000								
+09575002	0957	Nasami	NASAMI	5002	NAVOCEANO	JMSDF NASAMI	Gohya	Laboratory Item 334			A Summary of ENG Properties, Sediment Size &	19941108								
+09005014	0900	Unknown Platform	L.I. 248	5014	NAVOCEANO		Glover Hill	Laboratory Item 248												
+03995007	0399	Multiple	LEI-K	5007	NOAA/NMFS		Garlo													
+03995007	0399	Multiple	LEI-J	5007	NOAA/NMFS		Garlo													
+09995011	0936	Staten Island	N00561	5005	NHO	STATEN ISLA	Littlewodd				Data are part of set MGGD09995011									
+09005062	0900	Unknown Platform	L.I. 154	5062	NAVOCEANO			Laboratory Item 154												
+09005061	0900	Unknown Platform	L.I. 136	5061	NAVOCEANO		Stewart	Laboratory Item 136												
+09005009	0900	Unknown Platform	C-35	5009	NAVOCEANO															
+20995002	2027	Alpha II Ice Station	DISA2	5002	U. Washington	ALPHA II	Roberts													
+03995010	0300	Unknown Platform	MAFLADM1	5010	U. South Florida	INDIANSEAL	Doyle													
+09005029	0900	Unknown Platform	L.I. 362	5029	NAVOCEANO		Kelly Ross	Laboratory Item 362												
+09005046	0900	Unknown Platform	L.I. 470	5046	NAVOCEANO		Bowman	Laboratory Item 470												
+03995007	0399	Multiple	RBCII1	5007	NOAA/NMFS															
+09005001	0900	Unknown Platform	SUBSOME	5001	NAVOCEANO		Keller													
+03995007	0399	Multiple	FIM11	5007	EPA		Swartz													
+03995010	0677	Gyre	MAFLA029	5010	U. South Florida	GYRE	Doyle													
+09125004	0912	Dutton	T-AGS	5004	NAVOCEANO	DUTTON	Achstetter													
+09125001	0912	Dutton	T-AGS	5001	NAVOCEANO	DUTTON	Achstetter													
+03565001	0356	Longhorn	STOCS054	5001	U. Texas	LONGHORN	Behrens													
+09995035	0905	Kane	343408	5035	NAVOCEANO	USNS KANE	Ross	Laboratory Item 483			A Summary of X-Radiography, Sound Velocity,	19940912								
+03995007	0314	Peirce	BLM02B	5007	VIMS	GWPIERCE	Serafy Hartzban													
+03565001	0356	Longhorn	STOCS019	5001	U. Texas	LONGHORN	Behrens													
+09005021	0900	Unknown Platform	L.I. 308	5021	NAVOCEANO		Johnson	Laboratory Item 308												
+03565001	0356	Longhorn	STOCS030	5001	U. Texas	LONGHORN	Behrens													
+03995007	0399	Multiple	FIM04	5007	EPA		Swartz													
+09245004	0924	Tanner	LI 158	5004	NAVOCEANO	TANNER		Laboratory Item 158												
+09005074	0900	Unknown Platform	L.I. 373	5074	NAVOCEANO		Achstetter	Laboratory Item 373			Summary of Sediment Size and Composition of	19940923								
+09005023	0900	Unknown Platform	L.I.1008	5023	NAVOCEANO		Coleman	Laboratory Item1008												
+01995001	0101	Robert D. Conrad	RC10	5001	LDEO	Robert Conrad	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific	19950120	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+23045001	2304	Sea Transporter	I	5001	TAMU	SEA TRANSPO	Cooper													
+09315001	0931	Requisite	31946	5002	NAVOCEANO	REQUISITE	Underwood				Data part of MGGD09315001									
+20995002	2001	Thomas G. Thompson	TT051	5002	U. Washington	THOMPSON	Roberts													
+09995026	0903	Silas Bent	939011	5026	NAVOCEANO	USNS SILAS BENT	Hulsemann	Laboratory Item 1015			A Summary of Sediment Size and Composition	19000000								
+09245002	0924	Tanner	LIMA	5002	NAVOCEANO	TANNER	Bochman													
+09315004	0931	Requisite	00658	5004	NAVOCEANO	REQUISITE	Hammond				Cruise 00658 for 1960 Cruise 00865 for 1961									
+23085001	2308	Lady Gloria	10/05/82	5001	TAMU	LADY GLORIA	Slowey													
+09995039	0926	Lynch	LYNCH	5039	NAVOCEANO	USNS LYNCH	Stiles	Laboratory Item 485			A Summary of Sediment Size, X-Radiography,	19941222								
+09005036	0900	Unknown Platform	L.I. 437	5036	NAVOCEANO		Bowman	Laboratory Item 437												
+09005033	0900	Unknown Platform	L.I. 395	5033	NAVOCEANO		Kelly	Laboratory Item 395												
+23085001	2308	Lady Gloria	04/04/82	5001	TAMU	LADY GLORIA	Slowey													
+20995002	2005	Brown Bear	BB268	5002	U. Washington	BROWN BEAR	Roberts													
+03995007	5705	H. J. W. Fay	BLM06B	5007	VIMS	H.J.W.FAY	Hartzband													
+09005065	0900	Unknown Platform	L.I. 488	5065	NAVOCEANO		Bowman	Laboratory Item 488												
+03995007	0399	Multiple	QUART2	5007	NOAA/NMFS															
+06995003	0611	Sea Sounder	S878WG	5003	USGS, Menlo Park	SEA SOUNDER	Bouma Hampton													
+09005008	0900	Unknown Platform	0-197	5008	NAVOCEANO		Stiles													
+09815001	0981	Kana Keoki	730911	5001	NUC AND NCEL	KANA KEOKI														
+09005045	0900	Unknown Platform	L.I. 471	5045	NAVOCEANO		Bowman	Laboratory Item 471												
+09145001	0914	Michelson	T-AGS	5001	NAVOCEANO	MICHELSON	Bockman													
+09135001	0913	Bowditch	TAGS	5001	NAVOCEANO	BOWDITCH	Achstetter													
+09125002	0912	Dutton	TAGS	5002	NAVOCEANO	DUTTON	Achstetter													
+09005047	0900	Unknown Platform	L.I. 461	5047	NAVOCEANO		Bowman	Laboratory Item 461												
+03995007	0399	Multiple	LEI-G	5007	NOAA/NMFS		Garlo													
+03995007	0399	Multiple	LEI-F	5007	NOAA/NMFS		Hondo													
+03995007	0399	Multiple	RBCI02	5007	Rutgers		Dean													
+09265007	0926	Lynch	COGAD	5007	NAVOCEANO	USNS LYNCH	Achstetter													
+03995007	0399	Multiple	BCTS	5007	NOAA/NMFS		Radosh													
+09005004	0900	Unknown Platform	L.I. 318	5004	NAVOCEANO		Glover Hill	Laboratory Item 318												
+03565001	0356	Longhorn	STOCS032	5001	U. Texas	LONGHORN	Behrens													
+01995001	0101	Robert D. Conrad	RC13	5001	LDEO	Robert Conrad	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific	19950131	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+01995001	0103	Vema	V21	5001	LDEO	Vema	Horn	Tech Report # 3	NSF/ONR		Acoustic Provinces of the North Pacific.....	19950106	g/cm3	m/sec	g/cm2	g/cm2	cm	sec		
+09005019	0900	Unknown Platform	L.I. 227	5019	NAVOCEANO		Hill	Laboratory Item 227												
+09785007	0978	Wilkes	343921	5007	NAVOCEANO	USNS WILKES	Reynolds	Laboratory Items 520,525,526			Results of Laboratory Analysis Performed on	19940000								
+09065007	0906	San Pablo	PABLO	5007	NAVOCEANO	USS SAN PABLO	Hill	Laboratory Item 320			A Summary of Sound Velocities, Engineering properties	19941201								
+09995032	0999	Multiple	938029	5032	NAVOCEANO	UNKNOWN	Hulsemann	Laboratory Item 1011			A Summary of Sediment Size and Composition	19940000								
+09235002	0923	James M. Gilliss	407-69	5002	NAVOCEANO	USNS GILLIS	Oser	Laboratory Item 372			A Summary of Sediment Size,Composition, Engineering Properties	19941117								
+09005007	0918	Rehoboth	D-5	5007	NAVOCEANO	REHOBOTH														
+09995012	0939	Glacier	00652	5004	NHO	USS GLACIER					Data part of MGGD09995012									
+09315004	0931	Requisite	00865	5004	NAVOCEANO	REQUISITE	Hammond													
+09035002	0903	Silas Bent	L.I.1010	5002	NAVOCEANO	BENT	Hulsemann	Laboratory Item 1010												
+09005015	0900	Unknown Platform	L.I. 264	5015	NAVOCEANO		Stiles	Laboratory Item 264												
+19095001	1909	Snellius	NAVADO	5001	U. College N.Wales	H.N.M.S. SNELLI	Dewes	NAVADO III			Acoustic Properties and X-Ray Examination of	19940700								
+09995009	0936	Staten Island	N00636	5004	NAVOCEANO	STATEN ISLA					Data are part of MGGD09995009									
+09005028	0900	Unknown Platform	L.I.1017	5028	NAVOCEANO		Hulsemann	Laboratory Item1017												
+09995039	0962	Bartlett	BARTLETT	5039	NAVOCEANO	USNS BARTLETT	Stiles	Laboratory Item 485			A Summary of Sediment Size, X-Radiography,	19941221								
+09095004	0909	Gibbs	70 01 06	5004	NAVOCEANO	USNS GIBBS	Kelly	Laboratory Item 408			A Summary of Sediment Size, Composition,	19941115								
+09005035	0900	Unknown Platform	L.I. 431	5035	NAVOCEANO		Bowman	Laboratory Item 431												
+06995003	0611	Sea Sounder	S376WG	5003	USGS, Menlo Park	SEA SOUNDER	Bouma Hampton													
+09005005	0929	Prevail	D-5	5005	NAVOCEANO		Steward													
+20995002	2025	Northwind	NW161	5002	U. Washington	NORTHWIND	Roberts													
+03995007	0343	Atlantic Twin	RECON	5007	NOAA/NMFS	ATLANT.TWIN														
+03995007	5703	Columbus Iselin	BLM01B	5007	VIMS	ISELIN	Kraeuter													
+03995010	0300	Unknown Platform	MAFLA002	5010	U. South Florida	FREEPORT	Doyle													
+03995007	5705	H. J. W. Fay	BLM05B	5007	VIMS	H.J.W.FAY	Serafy													
+03565001	0356	Longhorn	STOCS024	5001	U. Texas	LONGHORN	Behrens													
+03995007	0399	Multiple	RBCI03	5007	Rutgers		Dean													
+03995007	0399	Multiple	RBCII4	5007	NOAA/NMFS															
+03995007	0399	Multiple	FIM05	5007	EPA		Swartz													
+03995007	0399	Multiple	LEI-B	5007	NOAA/NMFS		Garlo													
+03995007	0399	Multiple	LEI-A	5007	NOAA/NMFS		Garlo													
+03565001	0356	Longhorn	STOCS055	5001	U. Texas	LONGHORN	Behrens													
+09005051	0900	Unknown Platform	IR 70-13	5051	NAVOCEANO			Informal Report 70-13												
+09995010	0999	Multiple	ARNEB	5010	NHO	ARNEB					Data part of MGGD09995010									

@@ -91,7 +91,8 @@ sediment_phi_raster <- rasterize(sediment_sp, raster_base, field = sediment_df$m
 # Temperature data
 untar('./coelacanth_data/temperature/woa18_decav_t01mn01_shape.tar.gz', 
       exdir = './coelacanth_data/temperature')
-temp_jan <- shapefile('./coelacanth_data/temperature/monthly/woa18_decav_t01mn01.shp')
+temp_jan <- readOGR(dsn = './coelacanth_data/temperature/monthly', 
+            layer = 'woa18_decav_t01mn01')
 class(temp_jan)
 
 # function to open temperature shapefiles 
@@ -101,8 +102,8 @@ open_temperature <- function(month_num, which_dir) {
   untar(paste0('./coelacanth_data/temperature/', which_dir, '/woa18_decav_t', 
                month_num, 'mn01_shape.tar.gz'), 
         exdir = paste0('./coelacanth_data/temperature/', which_dir))
-  t <- shapefile(paste0('./coelacanth_data/temperature/', which_dir,
-                '/woa18_decav_t', month_num, 'mn01.shp'))
+  t <- readOGR(dsn = paste0('./coelacanth_data/temperature/', which_dir), 
+               layer = paste0('woa18_decav_t', month_num, 'mn01'))
   return(t)
 }
 
@@ -121,44 +122,81 @@ temp_dec <- open_temperature('12', "monthly")
 temp_winter <- open_temperature('13', "seasonal")
 temp_summer <- open_temperature('15', "seasonal")
 
-# replacing -999.999 with NA
-for (i in 1:57) {
-     temp_jan@data[,i] <- gsub(pattern = '-999.999', replacement = 'NA', 
-                               x = temp_jan@data[,i])
-}
-
-for (i in 1:102) {
-  temp_winter@data[,i] <- gsub(pattern = '-999.999', replacement = 'NA', 
-                            x = temp_winter@data[,i])
-}
-
-for (i in 1:102) {
-  temp_summer@data[,i] <- gsub(pattern = '-999.999', replacement = 'NA', 
-                            x = temp_summer@data[,i])
-}
-
-# all of the data are annoyingly in character mode, so they have to be changed 
-# to numeric
-for (i in 1:102) {
-  temp_winter@data[,i] <- as.numeric(temp_winter@data[,i])
-}
-
-for (i in 1:102) {
-  temp_summer@data[,i] <- as.numeric(temp_summer@data[,i])
-}
-
-# want to be rasterized based on mean depth ranging from 40 - 400 m
-temp_winter@data$meandepth <- rowMeans(temp_winter@data[,9:33])
-temp_summer@data$meandepth <- rowMeans(temp_summer@data[,9:33])
-
 # assign CRS to spatial polygons
 proj4string(temp_winter) <- CRS(wanted_crs)
 proj4string(temp_summer) <- CRS(wanted_crs)
 
+save(temp_winter, file = './coelacanth_data/temperature/seasonal/temp_winter.Rdata')
+save(temp_summer, file = './coelacanth_data/temperature/seasonal/temp_summer.Rdata')
+
+temp_test <- cbind(temp_winter@coords, temp_winter@data)
+temp_test1 <- cbind(temp_test$coords.x1, temp_test$coords.x2, temp_test$d5M)
+temp_test1[temp_test1[,3] < -999] <- NA
+
+temp_test_raster <- rasterFromXYZ(temp_test1, crs = wanted_crs)
+temp_test_raster2 <- reclassify(temp_test_raster, cbind(NA, -999.99))
+temp_test_raster2[is.na(temp_test_raster2)] <- -999.990
+
+
 # rasterizing Winter and Summer temperature values
-temp_winter_raster <- rasterize(temp_winter, raster_base, field = "meandepth")
-mode(temp_winter@data$meandepth)
+# I have to create a raster layer at each depth, stack them, then mean across the stack
+depth_vector <- names(temp_winter@data)[9:33]
+ras_list <- vector("list", length = length(depth_vector))
+for (i in seq_along(depth_vector)) {
+  ras <- rasterize(temp_winter, raster_base, depth_vector[i])
+  ras_list[[i]] <- ras
+}
 
+checking <- temp_winter@data$SURFACE
+!(is.numeric(checking))
+  
+temp_winter_raster <- rasterize(temp_winter, raster_base, 'd40M')
 
+# for each woa variable, need to untar the file, open it, assign the crs, 
+# and create a mean depth column
+#' @param dir_name = variable directory name under coelacanth_data
+#' @param var_type = woa file name scheme for variable
+#' @param season_num = number corresponding to wanted season
+#' all variables should be entered as character strings
+#' function returns a spatial points data frame with meandepth and the correct crs
+create_enviro_shape <- function(dir_name, var_type, season_num, file_path) {
+  untar(paste0('./coelacanth_data/', dir_name, '/woa18_', var_type, 
+               season_num, 'mn01_shape.tar.gz'), 
+        exdir = paste0('./coelacanth_data/', dir_name))
+  shap <- shapefile(paste0('./coelacanth_data/', dir_name, '/woa18_', var_type,
+                           season_num, 'mn01.shp'))
+  proj4string(shap) <- CRS(wanted_crs)
+  return(shap)
+}
 
+# create spatial points for salinity
+salinity_winter <- create_enviro_shape('salinity', 'decav_s', '13')
+save(salinity_winter, file = './coelacanth_data/salinity/salinity_winter.Rdata')
 
+salinity_summer <- create_enviro_shape('salinity', 'decav_s', '15')
+save(salinity_summer, file = './coelacanth_data/salinity/salinity_summer.Rdata')
+
+# create spatial points for dissolved oxygen
+DO_winter <- create_enviro_shape('dissolved_oxygen', 'all_o', '13')
+save(DO_winter, file = './coelacanth_data/dissolved_oxygen/DO_winter.Rdata')
+
+DO_summer <- create_enviro_shape('dissolved_oxygen', 'all_o', '15')
+save(DO_summer, file = './coelacanth_data/dissolved_oxygen/DO_summer.Rdata')
+
+# create spatial points for mixed layer depth
+mld_winter <- create_enviro_shape('mixed_layer_depth', 'decav81B0_M', '13')
+save(mld_winter, file = './coelacanth_data/mixed_layer_depth/mld_winter.Rdata')
+
+mld_summer <- create_enviro_shape('mixed_layer_depth', 'decav81B0_M', '15')
+save(mld_summer, file = './coelacanth_data/mixed_layer_depth/mld_summer.Rdata')
+
+# rasterize mixed layer depth
+mld_winter_raster <- rasterize(mld_winter, raster_base, 'SURFACE')
+plot(mld_winter_raster)
+plot(continent, col = "black", add = T)
+save(mld_winter_raster, file = './coelacanth_data/rasters/mld_winter_raster.Rdata')
+
+mld_summer_raster <- rasterize(mld_summer, raster_base, 'SURFACE')
+plot(mld_summer_raster)
+plot(continent, col = "black", add = T)
+save(mld_summer_raster, file = './coelacanth_data/rasters/mld_summer_raster.Rdata')
