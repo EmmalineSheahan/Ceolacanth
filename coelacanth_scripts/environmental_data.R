@@ -126,31 +126,39 @@ temp_summer <- open_temperature('15', "seasonal")
 proj4string(temp_winter) <- CRS(wanted_crs)
 proj4string(temp_summer) <- CRS(wanted_crs)
 
+# Replace -999.999 with NA
+temp_winter@data[temp_winter@data == -999.999] <- NA
+temp_summer@data[temp_summer@data == -999.999] <- NA
+
+# create mean depth value
+temp_winter@data$meandepth <- rowMeans(temp_winter@data[,9:33])
+temp_summer@data$meandepth <- rowMeans(temp_summer@data[,9:33])
+
+# save the spatial points data frame
 save(temp_winter, file = './coelacanth_data/temperature/seasonal/temp_winter.Rdata')
 save(temp_summer, file = './coelacanth_data/temperature/seasonal/temp_summer.Rdata')
 
+# create raster
 temp_test <- cbind(temp_winter@coords, temp_winter@data)
-temp_test1 <- cbind(temp_test$coords.x1, temp_test$coords.x2, temp_test$d5M)
-temp_test1[temp_test1[,3] < -999] <- NA
+temp_test1 <- cbind(temp_test$coords.x1, temp_test$coords.x2, temp_test$meandepth)
+temp_winter_raster <- rasterFromXYZ(temp_test1, crs = wanted_crs, res = res(raster_base))
+plot(temp_winter_raster)
+plot(continent, add = T, col = "black")
+save(temp_winter_raster, file = './coelacanth_data/rasters/temp_winter_raster.Rdata')
 
-temp_test_raster <- rasterFromXYZ(temp_test1, crs = wanted_crs)
-temp_test_raster2 <- reclassify(temp_test_raster, cbind(NA, -999.99))
-temp_test_raster2[is.na(temp_test_raster2)] <- -999.990
-
-
-# rasterizing Winter and Summer temperature values
-# I have to create a raster layer at each depth, stack them, then mean across the stack
-depth_vector <- names(temp_winter@data)[9:33]
-ras_list <- vector("list", length = length(depth_vector))
-for (i in seq_along(depth_vector)) {
-  ras <- rasterize(temp_winter, raster_base, depth_vector[i])
-  ras_list[[i]] <- ras
+# create_raster_mean function
+create_raster_mean <- function(wanted_sp) {
+  tempo <- cbind(wanted_sp@coords, wanted_sp@data)
+  tempo1 <- cbind(tempo$coords.x1, tempo$coords.x2, tempo$meandepth)
+  tempo1_raster <- rasterFromXYZ(tempo1, crs = wanted_crs, res = res(raster_base))
+  plot(tempo1_raster)
+  plot(continent, add = T, col = "black")
+  return(tempo1_raster)
 }
 
-checking <- temp_winter@data$SURFACE
-!(is.numeric(checking))
-  
-temp_winter_raster <- rasterize(temp_winter, raster_base, 'd40M')
+# test function on summer temperature data
+temp_summer_raster <- create_raster_mean(temp_summer)
+save(temp_summer_raster, file = './coelacanth_data/rasters/temp_summer_raster.Rdata')
 
 # for each woa variable, need to untar the file, open it, assign the crs, 
 # and create a mean depth column
@@ -171,17 +179,39 @@ create_enviro_shape <- function(dir_name, var_type, season_num, file_path) {
 
 # create spatial points for salinity
 salinity_winter <- create_enviro_shape('salinity', 'decav_s', '13')
+salinity_winter@data[salinity_winter@data == -999.999] <- NA
+salinity_winter@data$meandepth <- rowMeans(salinity_winter@data[,9:33])
 save(salinity_winter, file = './coelacanth_data/salinity/salinity_winter.Rdata')
 
 salinity_summer <- create_enviro_shape('salinity', 'decav_s', '15')
+salinity_summer@data[salinity_summer@data == -999.999] <- NA
+salinity_summer@data$meandepth <- rowMeans(salinity_summer@data[,9:33])
 save(salinity_summer, file = './coelacanth_data/salinity/salinity_summer.Rdata')
+
+# create mean raster for salinity
+salinity_winter_raster <- create_raster_mean(salinity_winter)
+save(salinity_winter_raster, file = './coelacanth_data/rasters/salinity_winter_raster.Rdata')
+
+salinity_summer_raster <- create_raster_mean(salinity_summer)
+save(salinity_summer_raster, file = './coelacanth_data/rasters/salinity_summer_raster.Rdata')
 
 # create spatial points for dissolved oxygen
 DO_winter <- create_enviro_shape('dissolved_oxygen', 'all_o', '13')
+DO_winter@data[DO_winter@data == -999.999] <- NA
+DO_winter@data$meandepth <- rowMeans(DO_winter@data[,9:33])
 save(DO_winter, file = './coelacanth_data/dissolved_oxygen/DO_winter.Rdata')
 
 DO_summer <- create_enviro_shape('dissolved_oxygen', 'all_o', '15')
+DO_summer@data[DO_summer@data == -999.999] <- NA
+DO_summer@data$meandepth <- rowMeans(DO_summer@data[,9:33])
 save(DO_summer, file = './coelacanth_data/dissolved_oxygen/DO_summer.Rdata')
+
+# create mean raster for dissolved oxygen
+DO_winter_raster <- create_raster_mean(DO_winter)
+save(DO_winter_raster, file = './coelacanth_data/rasters/DO_winter_raster.Rdata')
+
+DO_summer_raster <- create_raster_mean(DO_summer)
+save(DO_summer_raster, file = './coelacanth_data/rasters/DO_summer_raster.Rdata')
 
 # create spatial points for mixed layer depth
 mld_winter <- create_enviro_shape('mixed_layer_depth', 'decav81B0_M', '13')
